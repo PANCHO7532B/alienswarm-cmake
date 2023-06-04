@@ -1,0 +1,42 @@
+# Ignore some stuff and directories that I'm going to use during the development of this
+# Which is irrelevant for the mod itself, and I don't want a lot of people asking later "what does this do"
+.vscode/
+node_modules/
+private/
+test/
+package.json
+package-lock.json
+script.js
+
+# Ignore compiled binaries
+game/mod_swarm/bin/
+
+# Individual file extensions
+*.cbp
+*.layout
+
+# Ignore CMake generated stuff
+## Main src directory ##
+src/.vscode/
+src/CMakeFiles/
+src/CMakeCache.txt
+src/cmake_install.cmake
+src/Makefile
+## client source folder ##
+src/game/client/.vscode/
+src/game/client/CMakeFiles/
+src/game/client/CMakeCache.txt
+src/game/client/cmake_install.cmake
+src/game/client/Makefile
+## missionchooser source folder ##
+src/game/missionchooser/.vscode/
+src/game/missionchooser/CMakeFiles/
+src/game/missionchooser/CMakeCache.txt
+src/game/missionchooser/cmake_install.cmake
+src/game/missionchooser/Makefile
+## server source folder ##
+src/game/server/.vscode/
+src/game/server/CMakeFiles/
+src/game/server/CMakeCache.txt
+src/game/server/cmake_install.cmake
+src/game/server/Makefile
