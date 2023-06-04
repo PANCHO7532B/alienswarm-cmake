@@ -51,11 +51,4 @@ set(CLIENT_LIBRARIES)
 add_library(compiled_lib_example SHARED IMPORTED)
 set_target_properties(compiled_lib_example PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/compiled_lib_example.so)
 add_library(client SHARED source.cpp)
-
-# NOTE: libSDL2 is apparently linked already with vgui according to ldd info!
-# Uncomment the correspondent lines and add to target if you need it anyways.
-#add_library(vgui SHARED IMPORTED)
-#add_library(libSDL2 SHARED IMPORTED)
-#set_target_properties(vgui PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/vgui.so)
-#set_target_properties(libSDL2 PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/libSDL2.so)
-#target_link_libraries(client vgui)
+target_link_libraries(client compiled_lib_example)
