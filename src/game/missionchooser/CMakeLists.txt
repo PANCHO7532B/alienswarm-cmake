@@ -5,7 +5,7 @@
 # Re-adapted for Alien Swarm SDK, 04/Jun/2023                           #
 #########################################################################
 cmake_minimum_required(VERSION 3.0)
-project(client)
+project(missionchooser)
 
 # Setting specific compiler flags for each build
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
