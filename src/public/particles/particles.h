@@ -13,7 +13,7 @@
 #include "mathlib/mathlib.h"
 #include "mathlib/vector.h"
 #include "mathlib/ssemath.h"
-#include "appframework/iappsystem.h"
+#include "appframework/IAppSystem.h"
 #if 1
 #include "materialsystem/imaterialsystem.h"
 #include "materialsystem/materialsystemutil.h"
