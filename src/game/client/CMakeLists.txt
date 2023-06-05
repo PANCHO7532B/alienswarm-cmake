@@ -30,21 +30,21 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
 # Setting include directories
-include_directories(.\hl2
-    .\swarm
-    .\swarm\vgui
-    ..\statemachine
-    ..\..\game\shared\multiplayer
-    ..\..\game\shared\swarm
-    .\
-    ..\..\common
-    ..\..\public
-    ..\..\public\tier0
-    ..\..\public\tier1
-    ..\..\game\shared
-    .\game_controls
+include_directories(./hl2
+    ./swarm
+    ./swarm/vgui
+    ../statemachine
+    ../../game/shared/multiplayer
+    ../../game/shared/swarm
+    ./
+    ../../common
+    ../../public
+    ../../public/tier0
+    ../../public/tier1
+    ../../game/shared
+    ./game_controls
     #$(IntDir) # Why would you need the intermediate files anyway? Commenting for now...
-    ..\..\game\client\swarm\gameui
+    ../../game/client/swarm/gameui
 )
 
 # Setting output directories
