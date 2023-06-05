@@ -1,7 +1,7 @@
 #########################################################################
-# CMakeLists.txt (SDK Client)                     						#
-# Original by PANCHO7532 (pancho7532@p7com.net), 10/Dec/2022		    #
-# Originally adapted for Half-Life SDK, 05/Jan/2023				        #
+# CMakeLists.txt (SDK Client)                                           #
+# Original by PANCHO7532 (pancho7532@p7com.net), 10/Dec/2022            #
+# Originally adapted for Half-Life SDK, 05/Jan/2023                     #
 # Re-adapted for Alien Swarm SDK, 04/Jun/2023                           #
 #########################################################################
 cmake_minimum_required(VERSION 3.0)
