@@ -6,6 +6,25 @@
 #########################################################################
 cmake_minimum_required(VERSION 3.0)
 project(client)
+#########################################
+# placeholder, includes for debug:
+#.\\hl2;.\\swarm;.\\swarm\\vgui;..\\statemachine;..\\..\\game\\shared\\multiplayer;..\\..\\game\\shared\\swarm;.\\;..\\..\\common;..\\..\\public;..\\..\\public\\tier0;..\\..\\public\\tier1;..\\..\\game\\shared;.\\game_controls;$(IntDir);..\\..\\game\\client\\swarm\\gameui;
+# placeholder, defines for debug:
+#WIN32;_WIN32;_DEBUG;DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;DLLNAME=client;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC;MEMOVERRIDE_MODULE=client;_DLL_EXT=.dll;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;DLLNAME=client;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;NO_STRING_T;CLIENT_DLL;VECTOR;VERSION_SAFE_STEAM_API_INTERFACES;PROTECTED_THINGS_ENABLE;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;ENABLE_HTMLWINDOW;fopen=dont_use_fopen;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;INFESTED_DLL;SWARM_DLL;INFESTED_PARTICLES;GAMEUI_EMBEDDED;GAMEUI_EXPORTS;VERSION_SAFE_STEAM_API_INTERFACES;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll
+# placeholder, defines for windres debug:
+#_DEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE
+# placeholder, includes for linker debug:
+#..\\..\\lib\\common\\.;..\\..\\lib\\public\\. - it also depends on "winmm.lib", investigate later
+#########################################
+# placeholder, includes for release:
+# .\\hl2;.\\swarm;.\\swarm\\vgui;..\\statemachine;..\\..\\game\\shared\\multiplayer;..\\..\\game\\shared\\swarm;.\\;..\\..\\common;..\\..\\public;..\\..\\public\\tier0;..\\..\\public\\tier1;..\\..\\game\\shared;.\\game_controls;$(IntDir);..\\..\\game\\client\\swarm\\gameui;
+# placeholder, defines for release:
+# WIN32;_WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;DLLNAME=client;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC;MEMOVERRIDE_MODULE=client;_DLL_EXT=.dll;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;DLLNAME=client;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;NO_STRING_T;CLIENT_DLL;VECTOR;VERSION_SAFE_STEAM_API_INTERFACES;PROTECTED_THINGS_ENABLE;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;ENABLE_HTMLWINDOW;fopen=dont_use_fopen;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;INFESTED_DLL;SWARM_DLL;INFESTED_PARTICLES;GAMEUI_EMBEDDED;GAMEUI_EXPORTS;VERSION_SAFE_STEAM_API_INTERFACES;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll
+# placeholder, defines for windres release:
+# NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE
+# placeholder, includes for linker release:
+# ..\\..\\lib\\common\\.;..\\..\\lib\\public\\. - it also depends on "winmm.lib", investigate later
+#########################################
 # Setting specific compiler flags for each build
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
@@ -2050,7 +2069,6 @@ set(CLIENT_LIBRARIES ../../lib/public/bitmap.lib
     ../../lib/public/vstdlib.lib
     ../../lib/public/vtf.lib
 )
-###
 add_library(compiled_lib_example SHARED IMPORTED)
 set_target_properties(compiled_lib_example PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/compiled_lib_example.so)
 add_library(client SHARED source.cpp)
