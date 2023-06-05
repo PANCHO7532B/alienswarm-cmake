@@ -804,7 +804,7 @@ set(SDK_SWARMGAMEUIBASESRC ./swarm/gameui/backgroundmenubutton.cpp
     ./swarm/gameui/vguisystemmoduleloader.cpp
 )
 set(SDK_SWARMGAMEUIBASEHSRC ./swarm/gameui/backgroundmenubutton.h
-    ./swarm/gameui/basepaenl.h # This is an intended typo?
+    ./swarm/gameui/basepanel.h # It was before "basepaenl.h", it was an intended typo?
     ./swarm/gameui/basesavegamedialog.h
     ./swarm/gameui/bitmapimagepanel.h
     ./swarm/gameui/commandcheckbutton.h
@@ -1550,7 +1550,7 @@ set(SDK_HFILES ./animationlayer.h
     ./functionproxy.h
     ./fx.h
     ./fx_blood.h
-    ./cstrike/fx_cs_blood.h
+    # ./cstrike/fx_cs_blood.h # this file doesn't exists but in the original VS file is required somehow
     ./fx_discreetline.h
     ./fx_envelope.h
     ./fx_explosion.h
@@ -1582,7 +1582,7 @@ set(SDK_HFILES ./animationlayer.h
     ./hud_macros.h
     ./hud_numericdisplay.h
     ./hud_pdump.h
-    ./cstrike/hud_radar.h
+    # ./cstrike/hud_radar.h # this file also doesn't exists but in the original VS file is present for some reason
     ./hud_vehicle.h
     ./hudelement.h
     ./hudtexturehandle.h
@@ -1908,7 +1908,7 @@ set(SDK_SHAREDHFILES ../shared/activitylist.h
     ../shared/animation.h
     ../shared/apparent_velocity_helper.h
     ../shared/base_playeranimstate.h
-    ../shared/cstrike/basecsgrenade_projectile.h
+    # ../shared/cstrike/basecsgrenade_projectile.h # this file doesn't exists but in the original VS file is required
     ../shared/baseentity_shared.h
     ../shared/basegrenade_shared.h
     ../shared/hl2/basehlcombatweapon_shared.h
@@ -1936,7 +1936,7 @@ set(SDK_SHAREDHFILES ../shared/activitylist.h
     ../shared/eventlist.h
     ../shared/func_dust_shared.h
     ../shared/func_ladder.h
-    ../shared/cstrike/fx_cs_shared.h
+    # ../shared/cstrike/fx_cs_shared.h # this file doesn't exists but in the original VS file is required, why?
     ../shared/gameeventdefs.h
     ../shared/gamemovement.h
     ../shared/gamerules.h
@@ -2015,9 +2015,9 @@ set(SDK_SHAREDHFILES ../shared/activitylist.h
     ../shared/voice_gamemgr.h
     ../shared/voice_status.h
     ../shared/vphysics_sound.h
-    ../shared/cstrike/weapon_flashbang.h
-    ../shared/cstrike/weapon_hegrenade.h
-    ../shared/weapon_ifmsteadycam.h
+    # ../shared/cstrike/weapon_flashbang.h # this file doesn't exists but in the original VS file is required
+    # ../shared/cstrike/weapon_hegrenade.h # this file doesn't exists but in the original VS file is required?
+    # ../shared/weapon_ifmsteadycam.h # this file doesn't exists but in the original VS file is required??
     ../shared/weapon_parse.h
     ../shared/weapon_proficiency.h
 )
@@ -2069,7 +2069,7 @@ set(CLIENT_LIBRARIES ../../lib/public/bitmap.lib
     ../../lib/public/vstdlib.lib
     ../../lib/public/vtf.lib
 )
-add_library(compiled_lib_example SHARED IMPORTED)
-set_target_properties(compiled_lib_example PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/compiled_lib_example.so)
-add_library(client SHARED source.cpp)
-target_link_libraries(client compiled_lib_example)
+#add_library(compiled_lib_example SHARED IMPORTED)
+#set_target_properties(compiled_lib_example PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/compiled_lib_example.so)
+add_library(client SHARED ${SDK_CLIENTBASESRC} ${SDK_PRECOMPH} ${SDK_TEMPENTITIESSRC} ${SDK_GAMECONTROLSSRC} ${SDK_HL2SRC} ${SDK_SWARMBASESRC} ${SDK_SWARMGAMEUIBASESRC} ${SDK_SWARMGAMEUIBASEHSRC} ${SDK_SWARMEXTERNALSRC} ${SDK_SWARMGAMEUISRC} ${SDK_SWARMGAMEUIHSRC} ${SDK_SWARMGAMEUIWIN32} ${SDK_SWARMVGUISRC} ${SDK_SWARMVGUIMANAGEDPANELSSRC} ${SDK_SWARMSHAREDSRC} ${SDK_HFILES} ${SDK_PUBHFILES} ${SDK_SHAREDHFILES} ${SDK_GAMECONTROLSHSRC} ${MP3SRC} ${TOOLFRAMEWORKSRC})
+#target_link_libraries(client compiled_lib_example)

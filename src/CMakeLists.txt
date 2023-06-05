@@ -13,12 +13,12 @@ endif()
 message("[INFO] Build type: ${CMAKE_BUILD_TYPE}")
 
 # Available options
-option(BUILD_NOTHING_BY_DEFAULT, "Do not build pre-set projects", FALSE)
+#option(BUILD_NOTHING_BY_DEFAULT, "Do not build pre-set projects", FALSE)
 
 # This is intended for use on cross-compile stuff from Linux to Windows, who knows if it'll work on CMake under Windows
 if(WIN32)
     set(CMAKE_SYSTEM_NAME Windows)
-    set(TOOLCHAIN_PREFIX i686-w64-mingw32) # name of the compiler that we're going to use
+    set(TOOLCHAIN_PREFIX /usr/bin/i686-w64-mingw32) # name of the compiler that we're going to use
     set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}-gcc)
     set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}-g++)
     set(CMAKE_Fortran_COMPILER ${TOOLCHAIN_PREFIX}-gfortran)
