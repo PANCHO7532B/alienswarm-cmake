@@ -89,7 +89,7 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\common\.;..\..\lib\public\."
 				GenerateManifest="false"
-				IgnoreDefaultLibraryNames="libc;libcd;libcmt"
+				IgnoreDefaultLibraryNames="libc;libcd;libcmtd"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(IntDir)/$(TargetName).pdb"
 				GenerateMapFile="true"
@@ -2229,7 +2229,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\logic_random_outputs.h&apos;&#x0A;$File"
+				RelativePath=".\logic_random_outputs.h"
 				>
 			</File>
 			<File
